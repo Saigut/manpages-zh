@@ -49,7 +49,7 @@ tar \- tar 档案文件管理程序的 GNU 版本。
 .BR -B ", " --read-full-records
 ]
 [
-.BR --backup " BACKUP-TYPE"
+.BR --backup "[=备份类型]"
 ]
 [
 .BR --block-compress
@@ -322,7 +322,7 @@ tar \- tar 档案文件管理程序的 GNU 版本。
 .BR --transform " sed表达式"
 ]
 [
-.BR --totals	
+.BR --totals
 ]
 [
 .BR -U ", " --unlink-first
@@ -340,7 +340,7 @@ tar \- tar 档案文件管理程序的 GNU 版本。
 .BR -V ", " --label " 名称"
 ]
 [
-.BR --version	
+.BR --version
 ]
 [
 .BR --volno-file " 文件"
@@ -460,14 +460,11 @@ patterns will match the start of file names
 .BR -B ", " --read-full-blocks
 读取时重组块\ (用于读取4.2BSD pipes)
 .TP
-.BR --backup " BACKUP-TYPE"
-备份同名文件而不是删除它们。 提取文件时时后面可不必接参数， 创建备份时， BACKUP-TYPE为要备份的文件或目录名
-（原文：backup files instead of deleting them using BACKUP-TYPE simple or 
-numbered）
+.BR --backup "[=备份类型]"
+备份文件而不是删除它们,  备份类型有simple、numbered等
 .TP
 .BR --block-compress
-为tapes让压缩程序把结果成块输出
-（原文：block the output of compression program for tapes）
+让磁带的输出结果成块输出
 .TP
 .BR -C ", " --directory " 目录"
 提取文档到指定目录
@@ -491,7 +488,7 @@ numbered）
 指定存档或设备中的文件 (默认是\ "-"，\ 表示\ 标准输入/输出)
 .TP
 .BR -F ", " --info-script " 文件, " --new-volume-script " 文件"
-在每个tape的结尾运行脚本 （会应用\fI--multi-volume\fR选项）
+在每卷磁带的结尾运行脚本 （会应用\fI--multi-volume\fR选项）
 .TP
 .BR --force-local
 存档文件是本地的，\ 即使它的名称中含有冒号
@@ -558,7 +555,7 @@ numbered）
 如果文件系统中文件的硬链接数和存档中记录的不同， 则发出警告
 .TP
 .BR -L ", " --tape-length " N"
-在写入了N*1024字节后， 改变tapes
+在写入了N*1024字节后， 更换磁带
 .TP
 .BR -m ", " --touch ", " --modification-time
 不提取文件的修改时间
@@ -579,9 +576,7 @@ numbered）
 和\ \fI--newer\fR\ 类似， 但是只存储指定日期后有修改的文件
 .TP
 .BR --no-anchored
-作用不明
-（原文：match any subsequenceof the name's components with \fI--exclude）
-\fR
+匹配任意‘/’后字符项\fI--exclude\fR一起使用
 .TP
 .BR --no-auto-compress
 不根据存档后缀来决定使用哪个压缩程序
@@ -787,8 +782,8 @@ Debian Linux http://www.debian.org/
 Mike Frysinger <vapier@gentoo.org>
 .SH "译者"
 .nf
-LinuxForum.Net CMPP 中文手册页计划 http://cmpp.linuxforum.net 
-Saigut <gosaigut@gmail.com>
+CMPP 中文手册页计划 http://cmpp.linuxforum.net (2001/08/08)
+Saigut <gosaigut@gmail.com> (2013/11/09)
 .SH "中文版最新更新"
-.R 2013.11.08
+.R 2013/11/09
 .fi
